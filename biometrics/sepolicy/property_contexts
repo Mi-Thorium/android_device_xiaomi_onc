@@ -6,4 +6,3 @@ persist.vendor.fpc.				u:object_r:vendor_fingerprint_prop:s0
 persist.vendor.sys.fp.				u:object_r:vendor_fingerprint_prop:s0
 sys.fp.						u:object_r:vendor_fingerprint_prop:s0
 vendor.fpc.					u:object_r:vendor_fingerprint_prop:s0
-vendor.fingerprint.				u:object_r:vendor_fingerprint_prop:s0

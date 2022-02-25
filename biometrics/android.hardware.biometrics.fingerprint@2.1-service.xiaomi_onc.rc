@@ -15,6 +15,3 @@ on boot
 on post-fs-data
     mkdir /data/vendor/goodix 0770 system system
     mkdir /data/vendor/fpc 0770 system system
-
-on property:vendor.fingerprint.hwmdl=failed
-    stop vendor.fps_hal
