@@ -41,9 +41,8 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_onc
 BOARD_BOOTIMG_HEADER_VERSION := 1
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_SEPARATED_DTBO := true
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := onclite-perf_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/onclite
+BOARD_PREBUILT_DTBOIMAGE := device/xiaomi/kernel-mithorium/onc/dtbo.img
+BOARD_VENDOR_KERNEL_MODULES += $(wildcard device/xiaomi/kernel-mithorium/onc/*.ko)
 
 # Partitions
 TARGET_COPY_OUT_VENDOR := vendor
