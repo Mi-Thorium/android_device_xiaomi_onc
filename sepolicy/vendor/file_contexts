@@ -1,5 +1,5 @@
 # Ir
-/dev/lirc0	u:object_r:ir_device:s0
+/dev/spidev6\.1		u:object_r:ir_device:s0
 
 # Thermal
 /(vendor|system/vendor)/bin/thermal-engine-olive	u:object_r:thermal-engine_exec:s0
