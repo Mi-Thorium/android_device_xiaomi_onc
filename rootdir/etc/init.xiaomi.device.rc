@@ -3,7 +3,7 @@ on boot
     chown system system /dev/spidev6.1
 
 # Thermal
-service thermal-engine /vendor/bin/thermal-engine-olive
+service thermal-engine /vendor/bin/thermal-engine-onc
     override
     class main
     user root
