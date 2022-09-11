@@ -1,5 +1,5 @@
-# Xiaomi Mi439 - Camera
+# Xiaomi onc - Camera
 persist.vendor.camera.stats.test=5
 
-# Xiaomi Mi439 - Sensors
+# Xiaomi onc - Sensors
 ro.vendor.sensors.pseudo_gyro=true

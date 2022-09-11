@@ -48,7 +48,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_mi439 \
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_onc \
     android.hardware.biometrics.fingerprint@2.2
 
 # Input
@@ -72,7 +72,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/xiaomi/Mi439/Mi439-vendor.mk)
+$(call inherit-product, vendor/xiaomi/onc/onc-vendor.mk)
 
 # EXTRA: MiuiCamera
 ifneq ($(wildcard vendor/miuicamera/config.mk),)

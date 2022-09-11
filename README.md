@@ -1,1 +1,1 @@
-# Device Tree for Xiaomi SDM439 Devices (Mi439)
+# Device Tree for Xiaomi Redmi Y3 (onc) / Xiaomi Redmi 7 (onclite)
