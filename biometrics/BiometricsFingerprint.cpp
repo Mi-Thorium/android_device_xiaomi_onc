@@ -281,11 +281,6 @@ fingerprint_device_t* BiometricsFingerprint::openHal() {
             return fp_device;
         }
     } else {
-        // Cleanup FPC
-        ALOGI("Clean up FPC.");
-        if (!android::base::WriteStringToFile("disable", "/sys/devices/soc/soc:fpc1020/compatible_all", true)) {
-            ALOGE("Failed to cleanup FPC.");
-        }
         // Goodix
         ALOGI("Trying to load Goodix Fingerprint HAL (using gf_fingerprint hardware module id).");
         fp_device = BiometricsFingerprint::openTheHal("gf_fingerprint");
