@@ -1,5 +1,0 @@
-# Xiaomi onc - Camera
-persist.vendor.camera.stats.test=5
-
-# Xiaomi onc - Sensors
-ro.vendor.sensors.pseudo_gyro=true

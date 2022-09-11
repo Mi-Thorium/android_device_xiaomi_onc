@@ -1,3 +1,0 @@
-set_prop(init_xiaomi, camera_prop);
-set_prop(init_xiaomi, vendor_audio_prop);
-set_prop(init_xiaomi, vendor_hvdcp_opti_prop);

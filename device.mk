@@ -18,12 +18,6 @@ $(call inherit-product, device/xiaomi/mithorium-common/mithorium.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # Overlays
-PRODUCT_PACKAGES += \
-    xiaomi_pine_overlay \
-    xiaomi_olive_overlay \
-    xiaomi_olive_overlay_Snap \
-    xiaomi_olive_overlay_SystemUI
-
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Boot animation
@@ -33,7 +27,7 @@ TARGET_SCREEN_WIDTH := 720
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_olive/android.hardware.fingerprint.xml
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -53,8 +47,7 @@ PRODUCT_COPY_FILES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    init.xiaomi.device.rc \
-    init.xiaomi.device.sh
+    init.xiaomi.device.rc
 
 # Sensors
 PRODUCT_COPY_FILES += \
