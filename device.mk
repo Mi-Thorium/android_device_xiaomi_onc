@@ -13,6 +13,9 @@ TARGET_USES_DEVICE_SPECIFIC_GATEKEEPER := true
 # Keymaster
 TARGET_USES_DEVICE_SPECIFIC_KEYMASTER := true
 
+# Platform
+TARGET_BOARD_PLATFORM := msm8953
+
 # Inherit from mithorium-common
 $(call inherit-product, device/xiaomi/mithorium-common/mithorium.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
@@ -21,7 +24,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1440
+TARGET_SCREEN_HEIGHT := 1520
 TARGET_SCREEN_WIDTH := 720
 
 # Permissions
