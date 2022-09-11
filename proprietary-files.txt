@@ -1,33 +1,20 @@
-# Not appended blobs from Xiaomi/olive/olive:10/QKQ1.191014.001/V12.5.1.0.QCNCNXM:user/release-keys
+# Not appended blobs from xiaomi/onc/onc:10/QKQ1.191008.001/V12.5.3.0.QFLCNXM:user/release-keys
 # PAN Package version: Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
-vendor/etc/acdbdata/olive/SDM439_SKU1_Global_cal.acdb
-vendor/etc/acdbdata/olive/SDM439_SKU1_General_cal.acdb
-vendor/etc/acdbdata/olive/SDM439_SKU1_workspaceFile.qwsp
-vendor/etc/acdbdata/olive/SDM439_SKU1_Bluetooth_cal.acdb
-vendor/etc/acdbdata/olive/SDM439_SKU1_Speaker_cal.acdb
-vendor/etc/acdbdata/olive/SDM439_SKU1_Handset_cal.acdb
-vendor/etc/acdbdata/olive/SDM439_SKU1_Headset_cal.acdb
-vendor/etc/acdbdata/olive/SDM439_SKU1_Hdmi_cal.acdb
-
-# ACDB - from pine
-vendor/etc/acdbdata/pine/SDM439_SKU1_Bluetooth_cal.acdb
-vendor/etc/acdbdata/pine/SDM439_SKU1_General_cal.acdb
-vendor/etc/acdbdata/pine/SDM439_SKU1_Global_cal.acdb
-vendor/etc/acdbdata/pine/SDM439_SKU1_Handset_cal.acdb
-vendor/etc/acdbdata/pine/SDM439_SKU1_Hdmi_cal.acdb
-vendor/etc/acdbdata/pine/SDM439_SKU1_Headset_cal.acdb
-vendor/etc/acdbdata/pine/SDM439_SKU1_Speaker_cal.acdb
-vendor/etc/acdbdata/pine/SDM439_SKU1_workspaceFile.qwsp
+vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 
 # ADSP Modules
 vendor/lib/rfsa/adsp/dirac_resource.dar
 vendor/lib/rfsa/adsp/libdirac-capiv2.so
-vendor/lib/rfsa/adsp/misound_karaokemix_res.bin
-vendor/lib/rfsa/adsp/misound_karaoke_res.bin
-vendor/lib/rfsa/adsp/misound_res.bin
 
 # Audio dirac - from mido
 vendor/etc/diracmobile.config|d781cd6798a7481a8f7128d144abfb2b8794212d
@@ -38,18 +25,27 @@ vendor/lib/libDiracAPI_SHARED.so|42b49679d38eca93fead05ea06ddbdc8108fd4b1
 vendor/bin/hvdcp_opti
 
 # Consumer IR
-vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.msm8937.so
+vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.msm8953.so
 
-# Fingerprint
-vendor/lib64/com.fingerprints.extension@1.0.so
-vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8937.so
-vendor/lib64/hw/gf_fingerprint.default.so
-vendor/lib64/libgf_ca.so
+# Display Calibration
+vendor/etc/qdcm_calib_data_boe_hx8394f_video_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_CSOT_otm1901a_video_mode_dsi_panel.xml
+
+# Fingerprint (FPC)
+vendor/lib64/hw/fingerprint.fpc.default.so
+vendor/lib64/com.fingerprints.extension@2.0.so
+
+# Fingerprint (Goodix)
+vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8953.so
 vendor/lib64/libgf_hal.so
-vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
-vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
-vendor/lib/com.fingerprints.extension@1.0.so
+vendor/lib64/libgf_ca.so
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
+
+# Firmware
+vendor/firmware/aw87329_abrcv.bin
+vendor/firmware/aw87329_drcv.bin
+vendor/firmware/aw87329_kspk.bin
 
 # Gatekeeper (QTI) - from PAN
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
@@ -74,10 +70,8 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqcbor.so
 vendor/lib64/libqtikeymaster4.so
 
-# Perf configs - from PAN
+# Perf configs
 vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perf-profile0.conf
-vendor/etc/perf/perf-profile1.conf
 vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/perfconfigstore.xml
 vendor/etc/perf/targetconfig.xml
@@ -102,14 +96,11 @@ system_ext/lib64/com.qualcomm.qti.uceservice@2.1.so
 system_ext/lib64/com.qualcomm.qti.uceservice@2.2.so
 
 # Thermal
-vendor/bin/thermal-engine:vendor/bin/thermal-engine-olive
+vendor/bin/thermal-engine:vendor/bin/thermal-engine-onc
 vendor/lib64/libthermalfeature.so
 
 # Thermal configs
-vendor/etc/thermal-engine-camera.conf
-vendor/etc/thermal-engine-high.conf
-vendor/etc/thermal-engine-map.conf
-vendor/etc/thermal-engine-nolimits.conf
-vendor/etc/thermal-engine-normal.conf
-vendor/etc/thermal-engine-sgame.conf
 vendor/etc/thermal-engine.conf
+vendor/etc/thermal-engine-map.conf
+vendor/etc/thermal-engine-normal.conf
+vendor/etc/thermal-engine-video.conf
