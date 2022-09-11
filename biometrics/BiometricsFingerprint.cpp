@@ -25,6 +25,7 @@
 #include <android-base/file.h>
 #include <android-base/properties.h>
 
+#include <cstring>
 #include <inttypes.h>
 #include <unistd.h>
 
@@ -214,7 +215,7 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
     return sInstance;
 }
 
-fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name) {
+fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name, const char *class_name) {
     int err;
     const hw_module_t *hw_mdl = nullptr;
 
@@ -222,9 +223,16 @@ fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name) 
         return nullptr;
 
     ALOGD("Opening fingerprint hal library...");
-    if (0 != (err = hw_get_module(hwmdl_name, &hw_mdl))) {
-        ALOGE("Can't open fingerprint HW Module, error: %d", err);
-        return nullptr;
+    if (strlen(class_name) == 0) {
+        if (0 != (err = hw_get_module(hwmdl_name, &hw_mdl))) {
+            ALOGE("Can't open fingerprint HW Module, error: %d", err);
+            return nullptr;
+        }
+    } else {
+        if (0 != (err = hw_get_module_by_class(hwmdl_name, class_name, &hw_mdl))) {
+            ALOGE("Can't open fingerprint HW Module by class, error: %d", err);
+            return nullptr;
+        }
     }
 
     if (hw_mdl == nullptr) {
@@ -272,19 +280,19 @@ fingerprint_device_t* BiometricsFingerprint::openHal() {
 
     if (boot_fpsensor == "fpc") {
         // FPC
-        ALOGI("Trying to load FPC Fingerprint HAL (using default hardware module id).");
-        fp_device = BiometricsFingerprint::openTheHal(FINGERPRINT_HARDWARE_MODULE_ID);
+        ALOGI("Trying to load FPC Fingerprint HAL.");
+        fp_device = BiometricsFingerprint::openTheHal(FINGERPRINT_HARDWARE_MODULE_ID, "fpc");
         if (fp_device == nullptr) {
-            ALOGE("Failed to load fingerprint HAL with default hardware module id");
+            ALOGE("Failed to load FPC fingerprint HAL.");
         } else {
             return fp_device;
         }
     } else {
         // Goodix
-        ALOGI("Trying to load Goodix Fingerprint HAL (using gf_fingerprint hardware module id).");
-        fp_device = BiometricsFingerprint::openTheHal("gf_fingerprint");
+        ALOGI("Trying to load Goodix Fingerprint HAL.");
+        fp_device = BiometricsFingerprint::openTheHal(FINGERPRINT_HARDWARE_MODULE_ID, "");
         if (fp_device == nullptr) {
-            ALOGE("Failed to load fingerprint HAL with gf_fingerprint hardware module id");
+            ALOGE("Failed to load Goodix Fingerprint HAL.");
         } else {
             return fp_device;
         }
