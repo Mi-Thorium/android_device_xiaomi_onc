@@ -89,7 +89,7 @@
 #define MAX_AF_STATS_DATA_SIZE  1000
 #define MAX_ASD_STATS_DATA_SIZE 1000
 
-#define MAX_CAPTURE_BATCH_NUM 120
+#define MAX_CAPTURE_BATCH_NUM  32
 
 #define TUNING_DATA_VERSION        6
 #define TUNING_SENSOR_DATA_MAX     0x10000 /*(need value from sensor team)*/
@@ -1704,6 +1704,7 @@ typedef struct {
     int32_t est_snap_iso_value;
     uint32_t est_snap_luma;
     uint32_t est_snap_target;
+    uint32_t xiaomi_01[2];
 } cam_3a_params_t;
 
 typedef struct {
@@ -2481,6 +2482,7 @@ typedef enum {
     CAM_INTF_PARM_QUADRA_CFA,
     /* Meta Raw Dim */
     CAM_INTF_META_RAW,
+    XM_01,
     /* Number of streams and size of streams in
        current configuration for pic res*/
     CAM_INTF_META_STREAM_INFO_FOR_PIC_RES,
