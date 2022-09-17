@@ -30,8 +30,8 @@
 
 <mixer>
     <!-- These are the initial mixer settings -->
-    <ctl name="Speaker Boost" value="DISABLE" />
-    <ctl name="EAR PA Boost" value="DISABLE" />
+    <ctl name="Speaker Boost" value="ENABLE" />
+    <ctl name="EAR PA Boost" value="ENABLE" />
     <ctl name="Voice Rx Device Mute" id="0" value="0" />
     <ctl name="Voice Rx Device Mute" id="1" value="-1" />
     <ctl name="Voice Rx Device Mute" id="2" value="20" />
