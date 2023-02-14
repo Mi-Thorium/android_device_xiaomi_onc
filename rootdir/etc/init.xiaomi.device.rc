@@ -1,3 +1,7 @@
+# ADSP
+on boot
+    stop vendor.adsprpcd
+
 # IR
 on boot
     chown system system /dev/spidev6.1
