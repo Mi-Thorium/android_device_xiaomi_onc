@@ -1,5 +1,6 @@
 # Not appended blobs from xiaomi/onc/onc:10/QKQ1.191008.001/V12.5.3.0.QFLCNXM:user/release-keys
 # PAN Package version: Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
+# FP3 Package version: Fairphone/FP3/FP3:11/8901.4.A.0010/gms-f74c58a8:user/release-keys
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
@@ -637,8 +638,9 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqcbor.so
 vendor/lib64/libqtikeymaster4.so
 
-# Perf configs
+# Perf configs - from FP3
 vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/commonsysnodesconfigs.xml
 vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/perfconfigstore.xml
 vendor/etc/perf/targetconfig.xml
