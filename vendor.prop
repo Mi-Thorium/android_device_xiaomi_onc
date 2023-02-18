@@ -17,6 +17,9 @@ persist.vendor.audio.fluence.speaker=true
 ro.vendor.audio.sdk.fluencetype=fluence
 vendor.audio.feature.fluence.enable=true
 
+# Xiaomi onc - Camera
+persist.vendor.camera.expose.aux=1
+
 # Xiaomi onc - SoC
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SDM632
